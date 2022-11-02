@@ -70,3 +70,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Packages/manifest.json
+Packages/manifest.json
+Packages/packages-lock.json
+*.json
+Packages/com.ptc.vuforia.engine-10.10.2.tgz
