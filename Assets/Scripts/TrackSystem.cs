@@ -12,7 +12,7 @@ public class TrackSystem : MonoBehaviour
     private Transform pointTarget;
     private NavMeshAgent nma;
     private Animator ani;
-    private string parWalk = "開關走路";
+    private string parWalk = "走路";
 
 
 
@@ -46,9 +46,9 @@ public class TrackSystem : MonoBehaviour
         //代理器.設定目的地(目標物件的座標)
         nma.SetDestination(pointTarget.position);
 
-
-
-        print($"<color=yellow>代理器的加速度:{nma.velocity.magnitude}</color>");
+        // velocity 三維加速度
+        //magnitude 三維向量的長度 - 將三維向量轉為浮點數
+        //print($"<color=yellow>代理器的加速度:{nma.velocity.magnitude}</color>");
         ani.SetBool(parWalk, nma.velocity.magnitude != 0);
     }
 }
