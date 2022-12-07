@@ -8,10 +8,10 @@ public class TrackSystem : MonoBehaviour
     [SerializeField, Header("停止距離"), Range(0, 10)]
     private float stoppintDistance = 5;
 
-    private string nameTarget = "大吉";
+    private string nameTarget = "DogPolyart";
     private Transform pointTarget;
     private NavMeshAgent nma;
-    private Animation ani;
+    private Animator ani;
     private string parWalk = "開關走路";
 
 
@@ -26,7 +26,7 @@ public class TrackSystem : MonoBehaviour
         nma.speed = speed;
         nma.stoppingDistance = stoppintDistance;
 
-        ani = GetComponent<Animation>();
+        ani = GetComponent<Animator>();
     }
     // Start is called before the first frame update
     void Start()
@@ -48,7 +48,7 @@ public class TrackSystem : MonoBehaviour
 
 
 
-        print($"<color=yellow>代理器的加速度 : {nma.velocity.magnitude}</color>");
-        //ani.SetBool(parWalk, nma.velocity.magnitude != 0);
+        print($"<color=yellow>代理器的加速度:{nma.velocity.magnitude}</color>");
+        ani.SetBool(parWalk, nma.velocity.magnitude != 0);
     }
 }
