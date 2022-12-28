@@ -12,6 +12,8 @@ namespace kid
         private float hp;
         [SerializeField, Header("血條")]
         private Image imgHP;
+        [SerializeField, Header("畫布血條")]
+        private GameObject goCanvasHp;
 
         private float maxHP;
         private Animator ani;
@@ -19,14 +21,18 @@ namespace kid
         private string parDead = "開關死亡";
         private NavMeshAgent nma;
         private TowerSystem towerSystem;
+        private CapsuleCollider col;
+        private PlayerDataSystem playerDataSystem;
 
         private void Awake()
         {
             ani = GetComponent<Animator>();
             nma = GetComponent<NavMeshAgent>();
+            col = GetComponent<CapsuleCollider>();
 
             //透過類型尋找物件<泛型>(); - 該類型只有一個在場景上
             towerSystem = FindObjectOfType<TowerSystem>();
+            playerDataSystem = FindObjectOfType<PlayerDataSystem>();
             maxHP = hp;
 
         }
@@ -52,7 +58,12 @@ namespace kid
         {
             ani.SetBool(parDamage, true);
             nma.isStopped = true;
+            gameObject.layer += 0;
             towerSystem.targetInAttackArea = null; // 塔系統目標 為空值
+            col.enabled = false;
+            goCanvasHp.SetActive(false);
+            Destroy(gameObject, 1.5f);
+            playerDataSystem.UpdateCoin(30);
         }
     }
 

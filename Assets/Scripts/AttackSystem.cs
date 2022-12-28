@@ -8,8 +8,8 @@ namespace kid
     {
         [SerializeField, Header("要攻擊的物件名稱")]
         private string nameTarget;
-        [SerializeField, Header("攻擊力"), Range(0, 5000)]
-        private float attack;
+        //[SerializeField, Header("攻擊力"), Range(0, 5000)]
+        //private float attack;
 
         private void OnCollisionEnter(Collision collision)
         {
@@ -17,7 +17,7 @@ namespace kid
             if (collision.gameObject.name.Contains(nameTarget))
             {
                 //碰到物件取得傷害系統 並呼叫 造成傷害
-                collision.gameObject.GetComponent<DamageSystem>().GetDamage(attack);
+                collision.gameObject.GetComponent<DamageSystem>().GetDamage(PlayerDataSystem.attack);
             }
         }
     }

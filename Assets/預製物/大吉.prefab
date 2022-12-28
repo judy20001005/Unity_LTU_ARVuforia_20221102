@@ -2341,6 +2341,7 @@ GameObject:
   - component: {fileID: 1724518203574801361}
   - component: {fileID: 1724518203574801360}
   - component: {fileID: 437794766}
+  - component: {fileID: -8150936621867886281}
   m_Layer: 3
   m_Name: "\u5927\u5409"
   m_TagString: Untagged
@@ -2446,8 +2447,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3cb92ba0f3a4b49a2e77086213889b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1000
+  hp: 200
   imgHP: {fileID: 842123760}
+  goCanvasHp: {fileID: 345809691}
+--- !u!114 &-8150936621867886281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7136683809664476017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11594e414e453af448175874bc184286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 50
+  attackDistance: 3.5
+  attackInterval: 3
 --- !u!1 &7136683809664476019
 GameObject:
   m_ObjectHideFlags: 0
